@@ -1,7 +1,4 @@
-import React, {Components} from 'react'
+import React from 'react'
 import classes from './title.module.css'
 
-const TitleOfSite = (props) => {
-    return( <span className={classes.titleOfSite}>{props.appTitle}</span> );
-}
-export default TitleOfSite
+export const TitleOfSite = (props) => (<span className={classes.titleOfSite}>{props.appTitle}</span>);

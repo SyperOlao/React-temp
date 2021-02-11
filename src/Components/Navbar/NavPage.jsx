@@ -1,16 +1,17 @@
 import React from "react"
 import classes from "./NavPage.module.css"
-import NavElement from "./NavElement/NavElement";
-import {BrowserRouter} from "react-router-dom";
+import {NavElement} from "./NavElement/NavElement";
 
-const NavPage = () => {
+
+
+export const NavPage = () => {
     return (
         <nav className={classes.navList}>
-            <BrowserRouter>
-            <NavElement pathElem="/profile" text ="Profile"/>
-            </BrowserRouter>
+                <NavElement pathElem="/profile" text="Profile"/>
+                <NavElement pathElem="/message" text="Message"/>
+                <NavElement pathElem="/news" text="News"/>
+                <NavElement pathElem="/friends" text="Friends"/>
         </nav>
     );
 };
 
-export default NavPage;
