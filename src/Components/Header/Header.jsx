@@ -6,7 +6,7 @@ const Header = () => {
      return (
          <div className={classes.header}>
             <Logo />
-            <TitleOfSite appTitle="Совья нора" />
+            <TitleOfSite appTitle="В одноклассниках" />
          </div>
      );
 }

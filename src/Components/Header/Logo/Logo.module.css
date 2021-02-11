@@ -2,4 +2,12 @@
     border-radius: 50%;
     width: 45px;
     height: 45px;
+    display: inline;
+    padding-top: 10px;
+}
+.logo{
+    width: 45px;
+    height: 45px;
+    display: inline;
+    margin-left: 25px;
 }
