@@ -1,0 +1,20 @@
+.container {
+    display: grid;
+    grid-template-areas:
+            "header header header"
+            "sidebar main main";
+    grid-template-columns: 2fr 10fr 2fr;
+    grid-auto-rows: auto;
+}
+
+.header {
+    grid-area: header;
+}
+
+.navbar {
+    grid-area: sidebar;
+}
+
+.content {
+    grid-area: main;
+}
