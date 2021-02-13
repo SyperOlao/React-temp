@@ -16,6 +16,9 @@ export const MainPage = (props) => {
             <div className={classes.content}>
                 <Content state = {props.state}/>
             </div>
+            <div className={classes.footer}>
+
+            </div>
         </div>
     );
 };

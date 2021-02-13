@@ -6,3 +6,7 @@
 .linkNameActive{
     color: #DBE0FF;
 }
+
+.dialogContainer :hover{
+    background-color: #8324CB;
+}

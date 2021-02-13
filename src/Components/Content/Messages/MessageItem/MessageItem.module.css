@@ -1,9 +1,15 @@
 .container{
+    display: flex;
+    align-items: center;
+    row-gap: 20px;
+    column-gap: 30px;
+    background-color: #B39AFF;
+    border-radius: 7px;
 
 }
 
 .messageText{
-
+padding: 10px;
 }
 
 .userContainer{

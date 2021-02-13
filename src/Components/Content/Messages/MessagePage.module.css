@@ -1,0 +1,18 @@
+.container{
+    display: grid;
+    grid-template-areas:
+            "d m"
+            "d m";
+
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto;
+}
+.dialogs{
+    grid-area: d;
+}
+
+.messages{
+    grid-area: m;
+    background-color: #AB2DFF;
+}
+

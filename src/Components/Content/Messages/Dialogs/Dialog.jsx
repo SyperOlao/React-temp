@@ -6,7 +6,7 @@ import classes from "./Dialogs.module.css";
 export const Dialog = (props) => {
 let path = "/message" + "/" + props.id;
     return (
-        <div>
+        <div className={classes.dialogContainer}>
            <NavLink to={path} className={classes.linkName} activeClassName={classes.linkNameActive}>
                <User imgUrl ={props.imgUrl} name = {props.name}/>
            </NavLink>
