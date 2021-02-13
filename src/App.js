@@ -3,11 +3,11 @@ import './App.css';
 import {BrowserRouter} from "react-router-dom";
 import {MainPage} from "./Components/MainPage/MainPage";
 
-function App() {
+function App(props) {
     return (
         <div>
             <BrowserRouter>
-                <MainPage/>
+                <MainPage state={props.state}/>
             </BrowserRouter>
         </div>
     );

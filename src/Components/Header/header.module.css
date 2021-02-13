@@ -1,4 +1,16 @@
 .header{
+    display: flex;
+    align-items: center;
     width: 100%;
     background-color: #0f365d;
+    padding: 10px  10px  10px 10%;
+
+}
+
+.logo{
+
+}
+
+.title{
+   padding-left: 20px;
 }

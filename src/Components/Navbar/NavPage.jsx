@@ -2,8 +2,6 @@ import React from "react"
 import classes from "./NavPage.module.css"
 import {NavElement} from "./NavElement/NavElement";
 
-
-
 export const NavPage = () => {
     return (
         <nav className={classes.navList}>

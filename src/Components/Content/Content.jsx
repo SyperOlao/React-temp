@@ -6,13 +6,13 @@ import {News} from "./News/News";
 import {Friends} from "./Friends/Friends";
 import classes from "./Content.module.css"
 
-export const Content = () => {
+export const Content = (props) => {
     return (
         <div className={classes.wrapper}>
-            <Route exact path='/profile' component={Profile}/>
-            <Route exact path='/message' component={Message}/>
-            <Route exact path='/news' component={News}/>
-            <Route exact path='/friends' component={Friends}/>
+            <Route exact path='/profile' render={Profile}/>
+            <Route path='/message' render={() => <Message state = {props.state}/>}/>.
+            <Route exact path='/news' render={News}/>
+            <Route exact path='/friends' render={Friends}/>
         </div>
     );
 };

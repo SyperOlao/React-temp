@@ -4,7 +4,7 @@ import {NavPage} from "../Navbar/NavPage";
 import classes from "./MainPage.module.css"
 import {Content} from "../Content/Content";
 
-export const MainPage = () => {
+export const MainPage = (props) => {
     return (
         <div className={classes.container}>
             <div className={classes.header}>
@@ -14,7 +14,7 @@ export const MainPage = () => {
                 <NavPage/>
             </div>
             <div className={classes.content}>
-                <Content/>
+                <Content state = {props.state}/>
             </div>
         </div>
     );

@@ -4,10 +4,14 @@ import {TitleOfSite} from './TitleOfSite/TitleOfSite'
 import classes from './header.module.css'
 
 export const Header = () => {
-     return (
-         <div className={classes.header}>
-            <Logo />
-            <TitleOfSite appTitle="В одноклассниках" />
-         </div>
-     );
+    return (
+        <div className={classes.header}>
+            <div className={classes.logo}>
+                <Logo/>
+            </div>
+            <div className={classes.title}>
+                <TitleOfSite appTitle="В одноклассниках"/>
+            </div>
+        </div>
+    );
 };

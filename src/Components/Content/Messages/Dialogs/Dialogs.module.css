@@ -1,0 +1,8 @@
+.linkName{
+    text-decoration: none;
+    color: #282c34;
+}
+
+.linkNameActive{
+    color: #DBE0FF;
+}
