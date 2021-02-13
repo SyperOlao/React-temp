@@ -1,3 +1,15 @@
+.navElemBlock{
+    color: #282c34;
+    text-decoration: none;
+    padding: 5px;
+    font-size: 1.2rem;
+}
+
 .navElem{
-    grid-area: sidebar;
+    text-decoration: none;
+}
+
+.activeLink{
+    text-decoration: none;
+    color: #DBE0FF;
 }

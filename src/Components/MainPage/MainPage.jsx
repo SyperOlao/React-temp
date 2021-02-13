@@ -7,9 +7,15 @@ import {Content} from "../Content/Content";
 export const MainPage = () => {
     return (
         <div className={classes.container}>
-            <Header className={classes.header}/>
-            <NavPage className={classes.navbar}/>
-            <Content className={classes.content}/>
+            <div className={classes.header}>
+                <Header/>
+            </div>
+            <div className={classes.navBar}>
+                <NavPage/>
+            </div>
+            <div className={classes.content}>
+                <Content/>
+            </div>
         </div>
     );
 };
