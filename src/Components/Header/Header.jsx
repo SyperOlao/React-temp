@@ -3,7 +3,7 @@ import Logo from './Logo/Logo'
 import {TitleOfSite} from './TitleOfSite/TitleOfSite'
 import classes from './header.module.css'
 
-const Header = () => {
+export const Header = () => {
      return (
          <div className={classes.header}>
             <Logo />
@@ -11,5 +11,3 @@ const Header = () => {
          </div>
      );
 };
-
-export default Header;
