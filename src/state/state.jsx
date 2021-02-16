@@ -7,6 +7,8 @@ export let state ={
     messages: [
         {id:"1", message: "hello!"},
         {id:"2", message: "How are u?"},
-        {id:"1", message: "What was the home task?"},
+        {id:"3", message: "What was the home task?"},
+        {id:"4", message: "Yo"},
+        {id:"5", message: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores commodi corporis cupiditate ducimus enim, eveniet exercitationem expedita pariatur provident quia quo sapiente sunt. Aliquid architecto corporis debitis dolorum harum illo nemo neque, praesentium, quas sed sequi, similique tempore unde. A ab aliquam deleniti doloribus dolorum enim expedita inventore, ipsa nam nisi, pariatur placeat praesentium quam quas quia quos tempore velit? Amet dolorem doloremque id, nobis optio quibusdam sed tempora?"},
     ],
 };

@@ -1,17 +1,28 @@
-.container{
-    display: flex;
+/*.container {
+    display: inline-grid;
     align-items: center;
-    row-gap: 20px;
-    column-gap: 30px;
     background-color: #B39AFF;
     border-radius: 7px;
+    max-width: 49%;
+    margin: 10px;
+    grid-template-columns: 1fr 1fr;
+
+}*/
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #B39AFF;
+    width: 49%;
+}
+
+.messageText {
+    padding-left: 10px;
+    padding-right: 10px;
 
 }
 
-.messageText{
-padding: 10px;
-}
-
-.userContainer{
+.userContainer {
 
 }
