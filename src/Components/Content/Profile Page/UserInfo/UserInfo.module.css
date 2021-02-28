@@ -1,4 +1,4 @@
-.userPhoto{
+.userPhoto {
     height: 300px;
     width: 210px;
     background: #282c34;
@@ -9,7 +9,7 @@
     grid-template-areas: ". ph ." ". e .";
 }
 
-.userPhoto img{
+.userPhoto img {
     margin-top: 5px;
     height: 200px;
     width: 180px;
@@ -19,7 +19,7 @@
     border-radius: 2px;
 }
 
-.edit{
+.edit {
     grid-area: e;
     height: 30px;
     border-radius: 5px;
@@ -29,34 +29,50 @@
     outline: none;
 }
 
-.container{
+.container {
+    display: grid;
+    grid-template-areas: "name" "info";
+    padding: 5px;
+    margin-left: 15px;
+    background: #282c34;
+}
+
+.userNameContainer {
+    grid-area: name;
 
 }
 
-.userNameContainer{
+.infoContainer {
+    grid-area: info;
 
 }
 
-.userName{
+.infoItemContainer {
 
 }
 
-.userStatus{
+.infoConstItem {
+    display: inline;
+    padding: 5px;
+    color: #D7D7E1;
+}
+
+.infoItem {
+    display: inline;
+    color: #8C90E1;
+}
+
+.userName {
+    font-size: 25px;
+    color: #D7D7E1;
+}
+
+.userStatus {
+    color: #D7D7E1;
+}
+
+.online {
 
 }
 
-.online{
 
-}
-
-.infoContainer{
-
-}
-
-.infoConstItem{
-
-}
-
-.infoItem{
-
-}

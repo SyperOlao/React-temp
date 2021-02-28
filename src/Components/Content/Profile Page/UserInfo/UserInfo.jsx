@@ -10,10 +10,14 @@ export const UserInfo = (props) => {
                 <div className={classes.userStatus}>{props.state.status}</div>
             </div>
             <div className={classes.infoConstItem}>
-                <div className={classes.infoConstItem}>Дата рождения:</div>
-                <div className={classes.infoConstItem}>Личные отношения:</div>
-                <div className={classes.infoItem}>{props.state.birthday}</div>
-                <div className={classes.infoItem}>{props.state.relationships}</div>
+                <div className={classes.infoItemContainer}>
+                    <div className={classes.infoConstItem}>Дата рождения:</div>
+                    <div className={classes.infoItem}>{props.state.birthday}</div>
+                </div>
+                <div className={classes.infoItemContainer}>
+                    <div className={classes.infoConstItem}>Личные отношения:</div>
+                    <div className={classes.infoItem}>{props.state.relationships}</div>
+                </div>
             </div>
         </div>
     );
