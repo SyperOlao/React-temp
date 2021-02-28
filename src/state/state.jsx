@@ -11,4 +11,8 @@ export let state ={
         {id:"4", message: "Yo"},
         {id:"5", message: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores commodi corporis cupiditate ducimus enim, eveniet exercitationem expedita pariatur provident quia quo sapiente sunt. Aliquid architecto corporis debitis dolorum harum illo nemo neque, praesentium, quas sed sequi, similique tempore unde. A ab aliquam deleniti doloribus dolorum enim expedita inventore, ipsa nam nisi, pariatur placeat praesentium quam quas quia quos tempore velit? Amet dolorem doloremque id, nobis optio quibusdam sed tempora?"},
     ],
+    info:[
+        {id:"1", name: "Маша Михалкова", status: "Под дорогие вина жизни нашей, под действием минут, часов и дней, мы, женщины, становимся не старше, а опытней, опасней и вкусней!",
+            birthday:"08.06.2001", relationships: "влюблена", avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3q5uoxAszCx-zkXI5mTPFBD4Sr608Q8Ay1g&usqp=CAU"},
+    ],
 };

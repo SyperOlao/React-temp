@@ -1,12 +1,16 @@
 import React from 'react'
 import {UserPhoto} from "./UserInfo/UserPhoto";
+import {UserInfo} from "./UserInfo/UserInfo";
 
 
 
 export const Profile = (props) => {
     return (
         <div>
-            <UserPhoto imgUrl="https://memepedia.ru/wp-content/uploads/2019/01/hamster-768x432.jpg"/>
+            <UserPhoto imgUrl={props.state.info.avatar}/>
+            <div>
+                <UserInfo state={props.state.info} online={true}/>
+            </div>
         </div>
     );
 };
