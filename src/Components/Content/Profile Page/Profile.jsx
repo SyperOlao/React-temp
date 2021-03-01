@@ -2,6 +2,8 @@ import React from 'react'
 import {UserPhoto} from "./UserInfo/UserPhoto";
 import {UserInfo} from "./UserInfo/UserInfo";
 import classes from  "./PofilePage.module.css"
+import {WritePost} from "../Posts/WritePost";
+import {Post} from "../Posts/Post";
 
 export const Profile = (props) => {
     return (
@@ -11,7 +13,10 @@ export const Profile = (props) => {
             </div>
             <div className={classes.info}>
                 <UserInfo state={props.state.info[0]} online={true}/>
+                <WritePost/>
+                <Post/>
             </div>
+
         </div>
     );
 };
