@@ -2,7 +2,7 @@ import React from "react";
 import classes from "./Posts.module.css"
 import {Button} from "../Elements/Button/Button";
 
-export const WritePost = (props) => {
+export const WritePost = () => {
     return (
         <div>
             <div className={classes.container}>
@@ -10,7 +10,6 @@ export const WritePost = (props) => {
                 <textarea className={classes.textArea} placeholder="Напишите..."/>
                 <Button text="Отправить"/>
             </div>
-
         </div>
     );
 };

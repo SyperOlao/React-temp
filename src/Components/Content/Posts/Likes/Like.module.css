@@ -1,0 +1,10 @@
+.like{
+    display: inline;
+    color: rgba(112,179,104,0.91);
+    padding: 5px;
+}
+
+.dislike{
+    display: inline;
+    color: #B32A10;
+}

@@ -2,6 +2,12 @@
     background: #282c34;
 }
 
+.containerPost{
+    background: #282c34;
+    color: #f2fef9;
+    margin: 20px;
+}
+
 .textArea{
     width: 500px;
     min-height: 50px;
