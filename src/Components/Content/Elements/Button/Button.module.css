@@ -1,0 +1,11 @@
+.button{
+    background-color: #282c34;
+    border-radius: 4px;
+    border: 1px solid #f2fef9;
+    color: #f2fef9;
+    outline: none;
+    padding: 5px;
+}
+.button:hover{
+    opacity: 78%;
+}

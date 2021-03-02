@@ -1,5 +1,6 @@
 import React from "react"
 import classes from "./UserInfo.module.css"
+import {UserInfoElem} from "./UserInfoElem/UserInfoElem";
 
 export const UserInfo = (props) => {
     return (
@@ -10,14 +11,8 @@ export const UserInfo = (props) => {
                 <div className={classes.userStatus}>{props.state.status}</div>
             </div>
             <div className={classes.infoConstItem}>
-                <div className={classes.infoItemContainer}>
-                    <div className={classes.infoConstItem}>Дата рождения:</div>
-                    <div className={classes.infoItem}>{props.state.birthday}</div>
-                </div>
-                <div className={classes.infoItemContainer}>
-                    <div className={classes.infoConstItem}>Личные отношения:</div>
-                    <div className={classes.infoItem}>{props.state.relationships}</div>
-                </div>
+                <UserInfoElem constText={"Дата рождения:"} info={props.state.birthday}/>
+                <UserInfoElem constText={"Личные отношения:"} info={props.state.relationships}/>
             </div>
         </div>
     );

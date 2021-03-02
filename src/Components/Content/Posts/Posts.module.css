@@ -1,0 +1,21 @@
+.container{
+    background: #282c34;
+}
+
+.textArea{
+    width: 500px;
+    min-height: 50px;
+    max-height: none;
+    resize: none;
+    vertical-align: top;
+    overflow: hidden;
+    background-color: #454546;
+    color: #f2fef9;
+    border: 1px solid #282c34 ;
+    border-radius: 5px;
+}
+
+.text{
+    color: #f2fef9;
+}
+
