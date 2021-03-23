@@ -14,7 +14,7 @@ export const Profile = (props) => {
             <div className={classes.info}>
                 <UserInfo state={props.state.info[0]} online={true}/>
                 <WritePost/>
-                <Post text="post" amountLikes={43} amountDisLikes={21}/>
+                <Post text="post" amountLikes={42} amountDisLikes={21}/>
             </div>
 
         </div>
