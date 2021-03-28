@@ -5,10 +5,14 @@ import {MessagePage} from "./Messages/MessagePage";
 import {News} from "./News/News";
 import {Friends} from "./Friends/Friends";
 import classes from "./Content.module.css"
+import {Redirect} from "react-router";
 
 export const Content = (props) => {
     return (
         <div className={classes.wrapper}>
+            <Route exact path="/">
+               <Redirect to="/profile" />}
+            </Route>
             <Route exact path='/profile' render={() => <Profile state={props.state}/>}/>
             <Route path='/message' render={() => <MessagePage state={props.state}/>}/>
             <Route exact path='/news' render={() => <News/>}/>
