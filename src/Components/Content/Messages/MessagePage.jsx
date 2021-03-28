@@ -2,6 +2,7 @@ import React from 'react'
 import {Dialog} from "./Dialogs/Dialog";
 import {MessageItem} from "./MessageItem/MessageItem";
 import classes from "./MessagePage.module.css"
+import {TextArea} from "../Elements/TextArea/TextArea";
 
 export const MessagePage = (props) => {
     return (
@@ -20,6 +21,10 @@ export const MessagePage = (props) => {
                     })
                 }
             </div>
+            <div className={classes.textMessages}>
+                <TextArea placeholder="Напишите сообщение..." width={500} minHeight={60} />
+            </div>
+
         </div>
     );
 };

@@ -4,13 +4,16 @@ import {DisLikes} from "./Likes/Dislikes";
 import classes from "./Posts.module.css";
 
 export const Post = (props) => {
+    const onClick = () => {
+        return props.amountLikes++;
+    }
     return (
         <div>
             <div className={classes.containerPost}>
                 <div className={classes.text}>
                     {props.text}
                 </div>
-                <Likes amountLikes={props.amountLikes}/>
+                <Likes onClick={onClick} amountLikes={props.amountLikes}/>
                 <DisLikes amountDisLikes={props.amountDisLikes}/>
             </div>
         </div>

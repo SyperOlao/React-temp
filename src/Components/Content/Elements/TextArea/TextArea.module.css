@@ -1,0 +1,11 @@
+
+.textArea{
+    max-height: none;
+    resize: none;
+    vertical-align: top;
+    overflow: hidden;
+    background-color: #454546;
+    color: #f2fef9;
+    border: 1px solid #282c34 ;
+    border-radius: 5px;
+}
