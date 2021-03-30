@@ -9,20 +9,16 @@ export const MessagePage = (props) => {
         <div className={classes.container}>
             <div className={classes.dialogs}>
                 {
-                    props.state.users.map(user => {
-                        return <Dialog id={user.id} imgUrl={user.avatar} name={user.name}/>
-                    })
+                    props.users.map(user => <Dialog id={user.id} imgUrl={user.avatar} name={user.name}/>)
                 }
             </div>
             <div className={classes.messages}>
                 {
-                    props.state.messages.map(message => {
-                        return <MessageItem id={message.id} text = {message.message}/>
-                    })
+                    props.messages.map(message => <MessageItem id={message.id} text={message.message}/>)
                 }
             </div>
             <div className={classes.textMessages}>
-                <TextArea placeholder="Напишите сообщение..." width={500} minHeight={60} />
+                <TextArea placeholder="Напишите сообщение..." width={500} minHeight={60}/>
             </div>
 
         </div>

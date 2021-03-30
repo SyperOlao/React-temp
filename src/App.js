@@ -7,7 +7,7 @@ function App(props) {
     return (
         <div>
             <BrowserRouter>
-                <MainPage state={props.state}/>
+                <MainPage state={props.state} addPost={props.addPost}/>
             </BrowserRouter>
         </div>
     );

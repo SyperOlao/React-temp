@@ -14,7 +14,7 @@ export const MainPage = (props) => {
                 <NavPage/>
             </div>
             <div className={classes.content}>
-                <Content state = {props.state}/>
+                <Content state={props.state} addPost={props.addPost}/>
             </div>
             <div className={classes.footer}>
 
