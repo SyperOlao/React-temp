@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {store} from "./state/store"
@@ -8,12 +7,12 @@ import {store} from "./state/store"
 let renderTree = (state) => {
     ReactDOM.render(
         <React.StrictMode>
-            <App state={state} addPost={state.addPost}/>
+            <App state={state} addPost={store.addPost.bind(store)} updateNewPostText={store.updateNewPostText.bind(store)}/>
         </React.StrictMode>,
         document.getElementById('root')
     );
 };
 
-renderTree(store.getState())
+renderTree(store.getState());
 
 reportWebVitals();

@@ -12,8 +12,8 @@ export const Profile = (props) => {
                 <UserPhoto imgUrl={props.info[0].avatar}/>
             </div>
             <div className={classes.info}>
-                <UserInfo state={props.info[0]} online={true}/>
-                <WritePost/>
+                <UserInfo state={props.info[0]} online={true} upDatePost={""}/>
+                <WritePost addPost={props.addPost} updateNewPostText={props.updateNewPostText}/>
                 {props.posts.post.map(post => <Post text={post.message} amountLikes={post.amountLikes}
                                                     amountDisLikes={post.amountDisLikes}/>)}
             </div>

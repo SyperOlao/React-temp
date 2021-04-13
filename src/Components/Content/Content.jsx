@@ -13,7 +13,7 @@ export const Content = (props) => {
             <Route exact path="/">
                <Redirect to="/profile" />}
             </Route>
-            <Route exact path='/profile' render={() => <Profile info={props.state.info} posts={props.state.profilePagePost} addPost={props.addPost}/>}/>
+            <Route exact path='/profile' render={() => <Profile info={props.state.info} posts={props.state.profilePagePost} addPost={props.addPost} updateNewPostText={props.updateNewPostText}/>}/>
             <Route path='/message' render={() => <MessagePage users={props.state.users} messages={props.state.messages}/>}/>
             <Route exact path='/news' render={() => <News/>}/>
             <Route exact path='/friends' render={() => <Friends/>}/>

@@ -49,7 +49,7 @@ export let store = {
             post: [{id: 1, message: "Первый пост", amountLikes: 42, amountDisLikes:21},
                    {id: 2, message: "Второй пост", amountLikes: 12, amountDisLikes:17}
                 ],
-            tempPost: ''
+            tempPost: '',
         },
     },
 
@@ -59,17 +59,23 @@ export let store = {
     _renderUI(state) {
         console.log("state changed");
     },
-    addPost(text) {
-        let newId = this._state.profilePagePost.post[this._state.profilePagePost.post.length].id + 1;
-        this._state.profilePagePost.post.push(newId, text, 0, 0);
+    addPost() {
+        let temp = {id: this._state.profilePagePost.post[this._state.profilePagePost.post.length-1].id + 1,
+            message: this._state.profilePagePost.tempPost, amountLikes: 0, amountDisLikes: 0};
+        this._state.profilePagePost.post.push(temp);
         this._state.profilePagePost.tempPost = '';
         this._renderUI(this._state);
+
+        console.log("add: ", this._state.profilePagePost.post);
     },
     updateNewPostText(text) {
         this._state.profilePagePost.tempPost = text;
         this._renderUI(this._state)
+        console.log("temp: ",  this._state.profilePagePost.tempPost);
     },
-
+    subscribe(observe){
+        this._renderUI = observe;
+    }
 };
 
 window.store = store;

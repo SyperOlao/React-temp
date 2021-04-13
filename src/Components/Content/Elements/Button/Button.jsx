@@ -4,7 +4,7 @@ import classes from "./Button.module.css";
 export const Button = (props) =>{
     return (
         <div>
-            <input className={classes.button} type="button" value={props.text}/>
+            <input className={classes.button} type="button" value={props.text} onClick={props.onClick}/>
         </div>
 
     );
