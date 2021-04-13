@@ -14,7 +14,9 @@ export const Profile = (props) => {
             <div className={classes.info}>
                 <UserInfo state={props.info[0]} online={true} upDatePost={""}/>
                 <WritePost addPost={props.addPost} updateNewPostText={props.updateNewPostText}/>
+
                 {props.posts.post.map(post => <Post text={post.message} amountLikes={post.amountLikes}
+                                                    imgUrl={props.info[0].avatar} info={props.info[0]}
                                                     amountDisLikes={post.amountDisLikes}/>)}
             </div>
 

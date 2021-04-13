@@ -4,11 +4,24 @@
 
 .containerPost{
     background: #282c34;
+    width: 60%;
     color: #f2fef9;
-    margin: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #D7D7E1;
+    margin: auto auto 20px;
 }
 
 .text{
     color: #f2fef9;
 }
 
+.like{
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.dislike{
+    margin-top: 10px;
+    display: inline-block;
+}
