@@ -57,16 +57,19 @@ export let store = {
         return this._state;
     },
     _renderUI(state) {
-        console.log("state changed");
+        console.log("state_old changed");
     },
     addPost() {
-        let temp = {id: this._state.profilePagePost.post[this._state.profilePagePost.post.length-1].id + 1,
-            message: this._state.profilePagePost.tempPost, amountLikes: 0, amountDisLikes: 0};
-        this._state.profilePagePost.post.push(temp);
-        this._state.profilePagePost.tempPost = '';
-        this._renderUI(this._state);
-
-        console.log("add: ", this._state.profilePagePost.post);
+        if (this._state.profilePagePost.tempPost !== ''  &&  this._state.profilePagePost.tempPost.trim()) {
+            let temp = {
+                id: this._state.profilePagePost.post[this._state.profilePagePost.post.length - 1].id + 1,
+                message: this._state.profilePagePost.tempPost, amountLikes: 0, amountDisLikes: 0
+            };
+            this._state.profilePagePost.post.push(temp);
+            this._state.profilePagePost.tempPost = '';
+            this._renderUI(this._state);
+            console.log("add: ", this._state.profilePagePost.post);
+        }
     },
     updateNewPostText(text) {
         this._state.profilePagePost.tempPost = text;

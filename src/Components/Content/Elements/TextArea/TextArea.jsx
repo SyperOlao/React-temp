@@ -6,7 +6,6 @@ export const TextArea = (props) =>{
      return <textarea className={classes.textArea}
                       style={{width: props.width, minHeight: props.minHeight}}
                       placeholder={props.placeholder}
-                     // value={props.value}
                       ref={props.value}
                       onChange={props.onChange}
      />
