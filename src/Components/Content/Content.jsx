@@ -15,8 +15,7 @@ export const Content = (props) => {
             </Route>
             <Route exact path='/profile' render={() => <Profile info={props.state.info}
                                                                 posts={props.state.profilePagePost}
-                                                                addPost={props.addPost}
-                                                                updateNewPostText={props.updateNewPostText}
+                                                                dispatch={props.dispatch}
                                                                 />}/>
             <Route path='/message' render={() => <MessagePage users={props.state.users} messages={props.state.messages}/>}/>
             <Route exact path='/news' render={() => <News/>}/>

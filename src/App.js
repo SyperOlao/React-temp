@@ -5,10 +5,7 @@ import {MainPage} from "./Components/MainPage/MainPage";
 function App(props) {
     return (
         <div>
-                <MainPage state={props.state}
-                          addPost={props.addPost}
-                          updateNewPostText={props.updateNewPostText}
-                          />
+            <MainPage state={props.state} dispatch={props.dispatch}/>
         </div>
     );
 }

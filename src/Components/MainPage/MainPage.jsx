@@ -15,8 +15,7 @@ export const MainPage = (props) => {
             </div>
             <div className={classes.content}>
                 <Content state={props.state}
-                         addPost={props.addPost}
-                         updateNewPostText={props.updateNewPostText}
+                         dispatch={props.dispatch}
                 />
             </div>
             <div className={classes.footer}>

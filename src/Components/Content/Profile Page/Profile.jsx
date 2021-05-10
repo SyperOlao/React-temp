@@ -4,6 +4,8 @@ import {UserInfo} from "./UserInfo/UserInfo";
 import classes from "./PofilePage.module.css"
 import {WritePost} from "../Posts/WritePost";
 import {Post} from "../Posts/Post";
+import {updateNewPostTextAction} from "../../../state/actionCreators/postActions/updateNewPostTextAction";
+import {addPostAction} from "../../../state/actionCreators/postActions/addPostAction";
 
 export const Profile = (props) => {
     const [data, setData] = useState(props.posts.post);
@@ -17,12 +19,12 @@ export const Profile = (props) => {
     }
 
     const onChange = () => {
-        props.updateNewPostText(newPostElem.current.value);
+        props.dispatch(updateNewPostTextAction(newPostElem.current.value));
 
     }
 
     const onClick = () => {
-        props.addPost();
+        props.dispatch(addPostAction());
         newPostElem.current.value = '';
         setData(props.posts.post);
     }

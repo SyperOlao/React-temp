@@ -1,7 +1,9 @@
 import {ADD_POST} from "../../../actions/actionsTypes";
 import {initialState} from "../../../initialState";
 
-export const addPost = (state=initialState.profilePagePost, action) => {
+
+
+export const addPost = (state=initialState.profilePage.profilePagePost, action) => {
     switch (action.type) {
         case ADD_POST:
             if (state.tempPost !== '' && state.tempPost.trim()) {

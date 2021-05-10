@@ -1,7 +1,7 @@
-const {postPageReducer} = require("./postReducers/PostPageReducer");
-const {combineReducers} = require("redux");
+import {postPageReducer} from "./postReducers/PostPageReducer";
+import {combineReducers} from "redux";
 
 
 export let reducers = combineReducers({
-        postPageReducer
+        profilePagePost: postPageReducer
 });
