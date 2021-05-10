@@ -1,6 +1,7 @@
 export let store = {
     _state: {
-        users: [{
+        users: [
+            {
             id: "1",
             avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3q5uoxAszCx-zkXI5mTPFBD4Sr608Q8Ay1g&usqp=CAU",
             name: "Anna Moklyakova"
