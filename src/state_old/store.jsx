@@ -1,10 +1,11 @@
 export let store = {
     _state: {
-        users: [{
-            id: "1",
-            avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3q5uoxAszCx-zkXI5mTPFBD4Sr608Q8Ay1g&usqp=CAU",
-            name: "Anna Moklyakova"
-        },
+        users: [
+            {
+                id: "1",
+                avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3q5uoxAszCx-zkXI5mTPFBD4Sr608Q8Ay1g&usqp=CAU",
+                name: "Anna Moklyakova"
+            },
             {
                 id: "2",
                 avatar: "https://mirhvost.ru/upload/resize_cache/iblock/9fa/500_500_1/9fa9b807b220cc6e159c720c30053772.jpg",
@@ -46,9 +47,9 @@ export let store = {
             },
         ],
         profilePagePost: {
-            post: [{id: 1, message: "Первый пост", amountLikes: 42, amountDisLikes:21},
-                   {id: 2, message: "Второй пост", amountLikes: 12, amountDisLikes:17}
-                ],
+            post: [{id: 1, message: "Первый пост", amountLikes: 42, amountDisLikes: 21},
+                {id: 2, message: "Второй пост", amountLikes: 12, amountDisLikes: 17}
+            ],
             tempPost: '',
         },
     },
@@ -57,10 +58,10 @@ export let store = {
         return this._state;
     },
     _renderUI(state) {
-        console.log("state_old changed");
+
     },
     addPost() {
-        if (this._state.profilePagePost.tempPost !== ''  &&  this._state.profilePagePost.tempPost.trim()) {
+        if (this._state.profilePagePost.tempPost !== '' && this._state.profilePagePost.tempPost.trim()) {
             let temp = {
                 id: this._state.profilePagePost.post[this._state.profilePagePost.post.length - 1].id + 1,
                 message: this._state.profilePagePost.tempPost, amountLikes: 0, amountDisLikes: 0
@@ -74,9 +75,8 @@ export let store = {
     updateNewPostText(text) {
         this._state.profilePagePost.tempPost = text;
         this._renderUI(this._state)
-        console.log("temp: ",  this._state.profilePagePost.tempPost);
     },
-    subscribe(observe){
+    subscribe(observe) {
         this._renderUI = observe;
     }
 };

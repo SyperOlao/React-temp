@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import {UserPhoto} from "./UserInfo/UserPhoto";
 import {UserInfo} from "./UserInfo/UserInfo";
 import classes from "./PofilePage.module.css"
@@ -11,14 +11,16 @@ export const Profile = (props) => {
     let newPostElem = React.createRef();
 
     const MapPost = (arr) => {
-        return arr.map(post => <Post text={post.message} amountLikes={post.amountLikes}
-                                      imgUrl={props.info[0].avatar} info={props.info[0]}
-                                      amountDisLikes={post.amountDisLikes}/>)
+        return arr.data.map(post => <Post text={post.message} amountLikes={post.amountLikes}
+                                          imgUrl={props.info[0].avatar} info={props.info[0]}
+                                          amountDisLikes={post.amountDisLikes}/>);
     }
+    useEffect(() => {
+        setData(props.posts.post);
+    }, [props.posts.post]);
 
     const onChange = () => {
         props.updateNewPostText(newPostElem.current.value);
-
     }
 
     const onClick = () => {
@@ -36,9 +38,8 @@ export const Profile = (props) => {
                 <UserInfo state={props.info[0]} online={true} upDatePost={""}/>
                 {/* <WritePost addPost={props.addPost} updateNewPostText={props.updateNewPostText} MapPost={MapPost} setData={setData} post ={props.posts.post}/>*/}
                 <WritePost onChange={onChange} onClick={onClick} newPostElem={newPostElem}/>
-                {MapPost(data)}
+                <MapPost data={data}/>
             </div>
-
         </div>
     );
 };

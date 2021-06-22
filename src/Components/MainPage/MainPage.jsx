@@ -1,7 +1,7 @@
 import React from "react"
 import {Header} from "../Header/Header";
 import {NavPage} from "../Navbar/NavPage";
-import classes from "./MainPage.module.css"
+import classes from "./MainPage.module.css";
 import {Content} from "../Content/Content";
 
 export const MainPage = (props) => {
