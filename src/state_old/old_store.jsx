@@ -1,4 +1,4 @@
-export let store = {
+export let old_store = {
     _state: {
         users: [
             {
@@ -81,4 +81,4 @@ export let store = {
     }
 };
 
-window.store = store;
+window.store = old_store;

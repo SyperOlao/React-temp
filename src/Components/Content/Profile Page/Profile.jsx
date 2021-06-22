@@ -4,29 +4,29 @@ import {UserInfo} from "./UserInfo/UserInfo";
 import classes from "./PofilePage.module.css"
 import {WritePost} from "../Posts/WritePost";
 import {Post} from "../Posts/Post";
+import {connect} from "react-redux";
 
-export const Profile = (props) => {
-    const [data, setData] = useState(props.posts.post);
-
+const Profile = (props) => {
+    const [data, setData] = useState(props.post);
     let newPostElem = React.createRef();
-
     const MapPost = (arr) => {
         return arr.data.map(post => <Post text={post.message} amountLikes={post.amountLikes}
                                           imgUrl={props.info[0].avatar} info={props.info[0]}
-                                          amountDisLikes={post.amountDisLikes}/>);
-    }
+                                          amountDisLikes={post.amountDisLikes}/>);}
+
     useEffect(() => {
-        setData(props.posts.post);
-    }, [props.posts.post]);
+        setData(props.post);
+    }, [props.post]);
 
     const onChange = () => {
         props.updateNewPostText(newPostElem.current.value);
     }
 
     const onClick = () => {
+        //TODO:: Добавить addPost
         props.addPost();
         newPostElem.current.value = '';
-        setData(props.posts.post);
+        setData(props.post);
     }
 
     return (
@@ -43,3 +43,14 @@ export const Profile = (props) => {
         </div>
     );
 };
+
+const mapStateToProps = (state) => {
+    console.log(state);
+    return {
+        post: state.messageReducer.post,
+        tempPost: state.messageReducer.tempPost,
+    };
+}
+
+
+export default connect(mapStateToProps)(Profile);

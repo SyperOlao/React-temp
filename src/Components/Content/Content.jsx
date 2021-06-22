@@ -1,6 +1,6 @@
 import React from "react"
 import Route from "react-router-dom/es/Route";
-import {Profile} from "./Profile Page/Profile";
+import Profile from "./Profile Page/Profile";
 import {MessagePage} from "./Messages/MessagePage";
 import {News} from "./News/News";
 import {Friends} from "./Friends/Friends";
