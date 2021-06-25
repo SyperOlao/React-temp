@@ -3,7 +3,7 @@ import classes from "./Like.module.css"
 
 export const Likes = (props) =>{
     return (
-        <div className={classes.like}>
+        <div className={classes.like} onClick={props.onClick}>
             {props.amountLikes}
         </div>
     );

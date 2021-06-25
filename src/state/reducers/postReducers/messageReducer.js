@@ -1,8 +1,9 @@
-import {ADD_POST, TEXT_ON_TEXTBOX} from "../../actions/actionsTypes";
+import {ADD_LIKE, ADD_POST, TEXT_ON_TEXTBOX} from "../../actions/actionsTypes";
 
 const initialState = {
     tempPost: "",
-    post: [{id: 1, message: "Первый пост", amountLikes: 42, amountDisLikes: 21},
+    post: [
+        {id: 1, message: "Первый пост", amountLikes: 42, amountDisLikes: 21},
         {id: 2, message: "Второй пост", amountLikes: 12, amountDisLikes: 17}],
 };
 
@@ -20,6 +21,9 @@ export const messageReducer = (state = initialState, action) => {
 
         case TEXT_ON_TEXTBOX:
             return {...state, tempPost: action.text};
+        case ADD_LIKE:
+            return state;
+
         default:
             return state;
     }

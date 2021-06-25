@@ -6,7 +6,9 @@ import {User} from "../User/User";
 
 export const Post = (props) => {
     const onClick = () => {
-        return props.amountLikes++;
+        //debugger;
+        let a = props.amountLikes;
+        return a+1;
     }
     return (
         <div>
