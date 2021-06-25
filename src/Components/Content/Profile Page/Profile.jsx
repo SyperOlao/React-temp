@@ -5,6 +5,8 @@ import classes from "./PofilePage.module.css"
 import {WritePost} from "../Posts/WritePost";
 import {Post} from "../Posts/Post";
 import {connect} from "react-redux";
+import {addPostActionCreator} from "../../../state/actionCreators/messageActionCreators/addPostActionCreator";
+import {updatePostActionCreator} from "../../../state/actionCreators/messageActionCreators/updatePostActionCreator";
 
 const Profile = (props) => {
     const [data, setData] = useState(props.post);
@@ -12,14 +14,15 @@ const Profile = (props) => {
     const MapPost = (arr) => {
         return arr.data.map(post => <Post text={post.message} amountLikes={post.amountLikes}
                                           imgUrl={props.info[0].avatar} info={props.info[0]}
-                                          amountDisLikes={post.amountDisLikes}/>);}
+                                          amountDisLikes={post.amountDisLikes}/>);
+    }
 
     useEffect(() => {
         setData(props.post);
     }, [props.post]);
 
     const onChange = () => {
-        props.updateNewPostText(newPostElem.current.value);
+        props.updatePost(newPostElem.current.value);
     }
 
     const onClick = () => {
@@ -45,12 +48,18 @@ const Profile = (props) => {
 };
 
 const mapStateToProps = (state) => {
-    console.log(state);
+    console.log("state: \n", state);
     return {
         post: state.messageReducer.post,
         tempPost: state.messageReducer.tempPost,
     };
 }
 
+const mapDispatchToProps = () => {
+    return {
+        addPost: addPostActionCreator,
+        updatePost: updatePostActionCreator,
+    };
+}
 
-export default connect(mapStateToProps)(Profile);
+export default connect(mapStateToProps, mapDispatchToProps)(Profile);
