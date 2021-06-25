@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React from 'react'
 import {UserPhoto} from "./UserInfo/UserPhoto";
 import {UserInfo} from "./UserInfo/UserInfo";
 import classes from "./PofilePage.module.css"
@@ -9,27 +9,16 @@ import {addPostActionCreator} from "../../../state/actionCreators/messageActionC
 import {updatePostActionCreator} from "../../../state/actionCreators/messageActionCreators/updatePostActionCreator";
 
 const Profile = (props) => {
-    const [data, setData] = useState(props.post);
     let newPostElem = React.createRef();
-    const MapPost = (arr) => {
-        return arr.data.map(post => <Post text={post.message} amountLikes={post.amountLikes}
+    const MapPost = (data) => {
+        return data.map(post_elem => <Post text={post_elem.message} amountLikes={post_elem.amountLikes}
                                           imgUrl={props.info[0].avatar} info={props.info[0]}
-                                          amountDisLikes={post.amountDisLikes}/>);
-    }
-
-    useEffect(() => {
-        setData(props.post);
-    }, [props.post]);
-
-    const onChange = () => {
-        props.updatePost(newPostElem.current.value);
+                                          amountDisLikes={post_elem.amountDisLikes}/>);
     }
 
     const onClick = () => {
-        //TODO:: Добавить addPost
         props.addPost();
         newPostElem.current.value = '';
-        setData(props.post);
     }
 
     return (
@@ -39,9 +28,9 @@ const Profile = (props) => {
             </div>
             <div className={classes.info}>
                 <UserInfo state={props.info[0]} online={true} upDatePost={""}/>
-                {/* <WritePost addPost={props.addPost} updateNewPostText={props.updateNewPostText} MapPost={MapPost} setData={setData} post ={props.posts.post}/>*/}
-                <WritePost onChange={onChange} onClick={onClick} newPostElem={newPostElem}/>
-                <MapPost data={data}/>
+                <WritePost onChange={()=>props.updatePost(newPostElem.current.value)} onClick={onClick}
+                           newPostElem={newPostElem}/>
+                {MapPost(props.post)}
             </div>
         </div>
     );
@@ -55,11 +44,9 @@ const mapStateToProps = (state) => {
     };
 }
 
-const mapDispatchToProps = () => {
-    return {
+const mapDispatchToProps = {
         addPost: addPostActionCreator,
         updatePost: updatePostActionCreator,
-    };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile);

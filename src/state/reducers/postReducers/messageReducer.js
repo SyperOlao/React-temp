@@ -14,7 +14,7 @@ export const messageReducer = (state = initialState, action) => {
                     id: state.post[state.post.length - 1].id + 1,
                     message: state.tempPost, amountLikes: 0, amountDisLikes: 0
                 };
-                return {...state, post: {...state.post.push(temp)}, tempPost: ''}
+                return {...state, post: [...state.post, temp], tempPost: ''}
             }
             return state;
 
