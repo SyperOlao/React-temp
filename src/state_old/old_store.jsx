@@ -1,5 +1,5 @@
-export const initialState = {
-    dialogPage: {
+export let old_store = {
+    _state: {
         users: [
             {
                 id: "1",
@@ -36,8 +36,6 @@ export const initialState = {
                 message: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores commodi corporis cupiditate ducimus enim, eveniet exercitationem expedita pariatur provident quia quo sapiente sunt. Aliquid architecto corporis debitis dolorum harum illo nemo neque, praesentium, quas sed sequi, similique tempore unde. A ab aliquam deleniti doloribus dolorum enim expedita inventore, ipsa nam nisi, pariatur placeat praesentium quam quas quia quos tempore velit? Amet dolorem doloremque id, nobis optio quibusdam sed tempora?"
             },
         ],
-    },
-    profilePage: {
         info: [
             {
                 id: "1",
@@ -54,5 +52,33 @@ export const initialState = {
             ],
             tempPost: '',
         },
+    },
+
+    getState() {
+        return this._state;
+    },
+    _renderUI(state) {
+
+    },
+    addPost() {
+        if (this._state.profilePagePost.tempPost !== '' && this._state.profilePagePost.tempPost.trim()) {
+            let temp = {
+                id: this._state.profilePagePost.post[this._state.profilePagePost.post.length - 1].id + 1,
+                message: this._state.profilePagePost.tempPost, amountLikes: 0, amountDisLikes: 0
+            };
+            this._state.profilePagePost.post.push(temp);
+            this._state.profilePagePost.tempPost = '';
+            this._renderUI(this._state);
+            console.log("add: ", this._state.profilePagePost.post);
+        }
+    },
+    updateNewPostText(text) {
+        this._state.profilePagePost.tempPost = text;
+        this._renderUI(this._state)
+    },
+    subscribe(observe) {
+        this._renderUI = observe;
     }
-}
+};
+
+window.store = old_store;

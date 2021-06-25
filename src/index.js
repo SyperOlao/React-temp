@@ -1,25 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
-//import {store} from "./state_old/store"
-import {store} from "./state/store";
+import {old_store} from "./state_old/old_store"
 import {BrowserRouter} from "react-router-dom";
+import {Provider} from "react-redux";
+import {store} from "./state/store";
 
-let renderTree = (state) => {
-    ReactDOM.render(
-        <React.StrictMode>
+ReactDOM.render(
+    <React.StrictMode>
+        <Provider store={store}>
             <BrowserRouter>
-            <App state={state}
-                 dispatch={store.dispatch.bind(store)}
-            />
+                <App state={old_store.getState()}
+                     addPost={old_store.addPost.bind(old_store)}
+                     updateNewPostText={old_store.updateNewPostText.bind(old_store)}
+                />
             </BrowserRouter>
-        </React.StrictMode>,
-        document.getElementById('root')
-    );
-};
+        </Provider>
+    </React.StrictMode>,
+    document.getElementById('root')
+);
 
-renderTree(store.getState());
-store.subscribe(() => renderTree(store.getState()))
 
-reportWebVitals();
+
+

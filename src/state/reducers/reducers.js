@@ -1,7 +1,5 @@
-import {postPageReducer} from "./postReducers/PostPageReducer";
 import {combineReducers} from "redux";
+import {messageReducer} from "./postReducers/messageReducer";
 
 
-export let reducers = combineReducers({
-        profilePagePost: postPageReducer
-});
+export let reducers = combineReducers({messageReducer});
