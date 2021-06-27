@@ -20,7 +20,7 @@ export const Post = (props) => {
                     {props.text}
                 </div>
                 <div className={classes.like}>
-                    <Likes onClick={onClick} amountLikes={props.amountLikes}/>
+                    <Likes onClick={props.likeClick} amountLikes={props.amountLikes} index={props.index}/>
                 </div>
                 <div className={classes.dislike}>
                     <DisLikes amountDisLikes={props.amountDisLikes}/>

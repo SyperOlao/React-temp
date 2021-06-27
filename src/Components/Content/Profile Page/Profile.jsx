@@ -7,19 +7,16 @@ import {Post} from "../Posts/Post";
 import {connect} from "react-redux";
 import {addPostActionCreator} from "../../../state/actionCreators/messageActionCreators/addPostActionCreator";
 import {updatePostActionCreator} from "../../../state/actionCreators/messageActionCreators/updatePostActionCreator";
+import {addLikeActionCreator} from "../../../state/actionCreators/messageActionCreators/Likes/addLikeActionCreator";
 
 const Profile = (props) => {
     let newPostElem = React.createRef();
     const MapPost = (data) => {
         return data.map(post_elem => <Post text={post_elem.message} amountLikes={post_elem.amountLikes}
-                                          imgUrl={props.info[0].avatar} info={props.info[0]}
-                                          amountDisLikes={post_elem.amountDisLikes}/>);
+                                          imgUrl={props.info[0].avatar} info={props.info[0]} index={data.indexOf(post_elem)}
+                                          amountDisLikes={post_elem.amountDisLikes} likeClick={props.like}/>);
     }
 
-    const onClick = () => {
-        props.addPost();
-        newPostElem.current.value = '';
-    }
 
     return (
         <div className={classes.container}>
@@ -28,7 +25,7 @@ const Profile = (props) => {
             </div>
             <div className={classes.info}>
                 <UserInfo state={props.info[0]} online={true} upDatePost={""}/>
-                <WritePost onChange={()=>props.updatePost(newPostElem.current.value)} onClick={onClick}
+                <WritePost onChange={()=>props.updatePost(newPostElem.current.value)} onClick={()=>{props.addPost();newPostElem.current.value = '';}}
                            newPostElem={newPostElem}/>
                 {MapPost(props.post)}
             </div>
@@ -47,6 +44,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = {
         addPost: addPostActionCreator,
         updatePost: updatePostActionCreator,
+        like: addLikeActionCreator,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile);

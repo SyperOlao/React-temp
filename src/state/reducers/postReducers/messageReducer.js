@@ -22,7 +22,9 @@ export const messageReducer = (state = initialState, action) => {
         case TEXT_ON_TEXTBOX:
             return {...state, tempPost: action.text};
         case ADD_LIKE:
-            return state;
+            let arr = state.post;
+            arr[action.index].amountLikes = arr[action.index].amountLikes+1;
+            return {...state, post: arr};
 
         default:
             return state;
